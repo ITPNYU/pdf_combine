@@ -24,7 +24,7 @@ python pdf_combine.pyw
 
 make the script executable by
 ```
-chmod +x your_program.rb
+chmod +x pdf_combine.pyw
 ```
 - Recursive mode.
 ``` sh
