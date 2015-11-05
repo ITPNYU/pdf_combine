@@ -25,7 +25,9 @@ def merge(path, output_filename):
     output_stream = file(output_filename, "wb")
     output.write(output_stream)
     output_stream.close()
-    shutil.copy(output_filename,nowdir)
+    
+    if output_filename != (nowdir.split("/")[-1] + ".pdf"):
+        shutil.copy(output_filename,nowdir)
 
     print("--- END ---")
 
