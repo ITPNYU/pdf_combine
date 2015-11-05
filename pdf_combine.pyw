@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 # To combine multi PDFs in multi folders
 
 import os
@@ -7,10 +8,9 @@ from glob import glob
 from pyPdf import PdfFileReader, PdfFileWriter
 
 def merge(path, output_filename):
-    #print "PATH: "+ path
+
     output = PdfFileWriter()
     os.chdir(path)
-    #print glob('*.pdf')
 
     for pdffile in glob('*.pdf'):
         if pdffile == output_filename:
@@ -37,8 +37,8 @@ if __name__ == "__main__":
     parser = ArgumentParser()
 
     # Add more options if you like
-    parser.add_argument("-o", "--output", dest="output_filename", default="merged.pdf",
-                      help="write merged PDF to FILE", metavar="FILE")
+    # parser.add_argument("-o", "--output", dest="output_filename", default="merged.pdf",
+    #                   help="write merged PDF to FILE", metavar="FILE")
     parser.add_argument("-p", "--path", dest="path", default=".",
                       help="path of source PDF files")
     parser.add_argument("-r", "--recursive", dest="all_folders", default="false",
@@ -49,7 +49,7 @@ if __name__ == "__main__":
     recur = args.all_folders.lower();
     
     if recur == "false":
-        print "--- LOCAL MODE ---"
+        print "--- SINGLE MODE ---"
         merge(args.path, nowdir.split("/")[-1] + ".pdf")
 
     elif recur == "true":
