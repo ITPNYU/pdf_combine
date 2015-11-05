@@ -1,3 +1,5 @@
+# To combine multi PDFs in multi folders
+
 import os
 import shutil
 from argparse import ArgumentParser
