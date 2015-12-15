@@ -82,9 +82,13 @@ if __name__ == "__main__":
     else:
         print "!!! ERROR, TRY AGAIN !!!"
 
-    for log in errorLogs:
-        print log
-        f.write(str(log))
-
+    print("print out error logs")
+    
+    if len(errorLogs) == 0:
+        f.write("No Error")
+    else:
+        for log in errorLogs:
+            f.write(str(log))
+    
     f.close()
 
